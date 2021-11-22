@@ -27,17 +27,16 @@
 | View            | 存放视图层控制代码                                    | 02.Scripts |                    |
 
 
-
 3、界面对象结构拆分
 
-| 结构                     | 结构对象说明                                                 | 父界面对象  | 其他说明 |
-| ------------------------ | ------------------------------------------------------------ | ----------- | -------- |
-| SampleScene              | 主场景                                                       |             |          |
-| Plane                    | 用作地面模型                                                 | SampleScene |          |
-| FrostArcher1             | 友方士兵模型的预制体                                         | SampleScene |          |
-| FrostArcher2             | 敌方士兵模型的预制体                                         | SampleScene |          |
-| FrostArcherManagerObject | 用于挂载FrostArcherManager.cs脚本，好让别的脚本可以获得这个管理类的实体，来实例化 | SampleScene |          |
-
+| 结构                     | 结构对象说明                                                 | 父界面对象   | 其他说明 |
+| ------------------------ | ------------------------------------------------------------ | ------------ | -------- |
+| SampleScene              | 主场景                                                       |              |          |
+| Plane                    | 用作地面模型                                                 | SampleScene  |          |
+| FrostArcher1             | 友方士兵模型的预制体                                         | SampleScene  |          |
+| FrostArcher2             | 敌方士兵模型的预制体                                         | SampleScene  |          |
+| FrostArcherManagerObject | 用于挂载FrostArcherManager.cs脚本，好让别的脚本可以获得这个管理类的实体，来实例化 | SampleScene  |          |
+| BloudTxt                 | 显示敌方士兵FrostArcher2血量的3D文本框                         | FrostArcher2 |          |
 
 
 4、代码逻辑分层
