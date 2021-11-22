@@ -260,10 +260,10 @@
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Assets/Plugs/DOTween/DOTween.dll</HintPath>
+ <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Assets/04.Plugs/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTweenEditor">
- <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Assets/Plugs/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Assets/04.Plugs/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>

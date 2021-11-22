@@ -58,20 +58,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\02.Scripts\Controller\FrostArcher1Controller.cs" />
+     <Compile Include="Assets\02.Scripts\Controller\FrostArcher2Controller.cs" />
+     <Compile Include="Assets\02.Scripts\Controller\FrostArcherManager.cs" />
+     <Compile Include="Assets\02.Scripts\Model\FrostArcherModel.cs" />
+     <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModuleAudio.cs" />
+     <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
+     <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModulePhysics.cs" />
+     <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+     <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModuleSprite.cs" />
+     <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModuleUI.cs" />
+     <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+     <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModuleUtils.cs" />
      <Compile Include="Assets\ParseCsv\例子\BuffModel.cs" />
      <Compile Include="Assets\ParseCsv\例子\GameModelManager.cs" />
-     <Compile Include="Assets\Plugs\DOTween\Modules\DOTweenModuleAudio.cs" />
-     <Compile Include="Assets\Plugs\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
-     <Compile Include="Assets\Plugs\DOTween\Modules\DOTweenModulePhysics.cs" />
-     <Compile Include="Assets\Plugs\DOTween\Modules\DOTweenModulePhysics2D.cs" />
-     <Compile Include="Assets\Plugs\DOTween\Modules\DOTweenModuleSprite.cs" />
-     <Compile Include="Assets\Plugs\DOTween\Modules\DOTweenModuleUI.cs" />
-     <Compile Include="Assets\Plugs\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
-     <Compile Include="Assets\Plugs\DOTween\Modules\DOTweenModuleUtils.cs" />
-     <Compile Include="Assets\Scripts\Controller\FostArcher1Controller.cs" />
-     <Compile Include="Assets\Scripts\Controller\FrostArcherManager.cs" />
-     <Compile Include="Assets\Scripts\Model\FrostArcherModel.cs" />
-     <None Include="Assets\Plugs\DOTween\readme.txt" />
+     <None Include="Assets\04.Plugs\DOTween\readme.txt" />
      <None Include="Assets\WW4_Effects_Sub\Effect\Soldier\FrostArcher\FrostArcher_effect\shader\Bingdong_vogeo.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -278,7 +279,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Assets/Plugs/DOTween/DOTween.dll</HintPath>
+ <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Assets/04.Plugs/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>/Users/xuda/Desktop/practiceProject/New Unity Project 2/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
