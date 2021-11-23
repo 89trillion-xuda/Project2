@@ -35,8 +35,9 @@
 | Plane                    | 用作地面模型                                                 | SampleScene  |          |
 | FrostArcher1             | 友方士兵模型的预制体                                         | SampleScene  |          |
 | FrostArcher2             | 敌方士兵模型的预制体                                         | SampleScene  |          |
-| FrostArcherManagerObject | 用于挂载FrostArcherManager.cs脚本，好让别的脚本可以获得这个管理类的实体，来实例化 | SampleScene  |          |
-| BloudTxt                 | 显示敌方士兵FrostArcher2血量的3D文本框                         | FrostArcher2 |          |
+| FrostArcherManagerObject | 用于挂载FrostArcherManager.cs脚本，好让别的脚本可以获得这个管理类的实体，来使用其中的方法 | SampleScene  |          |
+| ObjectPool               | 用于挂载ObjectPool.cs脚本，好让别的脚本可以获得这个对象池的实体，来使用其中的方法 |              |          |
+| BloudTxt                 | 显示敌方士兵FrostArcher2血量的3D文本框                       | FrostArcher2 |          |
 
 
 4、代码逻辑分层
@@ -47,6 +48,7 @@
 | 控制层：FrostArcherManager        | 冰霜弓箭手管理类，用于获取csv中具体的数据                    | 位于Controller下 |
 | 控制层：FrostArcher1Controller.cs | 己方士兵的控制类，管理士兵的动作动画等操作                   | 位于Controller下 |
 | 控制层：FrostArcher2Controller.cs | 敌方士兵的控制类，通过提供的解析方法得到csv中的数据，然后管理士兵的血量等参数 | 位于Controller下 |
+| 控制层：ObjectPool.cs             | 对象池脚本，实现对象池的使用                                 | 位于Controller下 |
 
 
 
