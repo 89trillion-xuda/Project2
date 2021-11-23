@@ -20,7 +20,6 @@ public class FrostArcher2Controller : MonoBehaviour
         FrostArcherManager frostArcherManager = FrostArcherManager.Instantiate(frostArcherManagerClone, transform);
         //获得cav里的弓箭手数据
         List<FrostArcherModel> list = frostArcherManager.GetFrostArcherModel();
-        Debug.Log("id:" + list[0].id + " note" + list[0].note);
 
         //设置初始血量值
         textMeshClone.text = list[0].MaxHp.ToString();

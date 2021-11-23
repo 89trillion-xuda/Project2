@@ -61,6 +61,7 @@
      <Compile Include="Assets\02.Scripts\Controller\FrostArcher1Controller.cs" />
      <Compile Include="Assets\02.Scripts\Controller\FrostArcher2Controller.cs" />
      <Compile Include="Assets\02.Scripts\Controller\FrostArcherManager.cs" />
+     <Compile Include="Assets\02.Scripts\Controller\ObjectPool.cs" />
      <Compile Include="Assets\02.Scripts\Model\FrostArcherModel.cs" />
      <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModuleAudio.cs" />
      <Compile Include="Assets\04.Plugs\DOTween\Modules\DOTweenModuleEPOOutline.cs" />

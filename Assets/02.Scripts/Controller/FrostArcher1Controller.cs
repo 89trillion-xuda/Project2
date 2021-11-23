@@ -27,6 +27,8 @@ public class FrostArcher1Controller : MonoBehaviour
     
     //接收传过来的FrostArcherManager脚本组件，以便后面进行实例化
     [SerializeField] private FrostArcherManager frostArcherManagerClone;
+    //接收传过来的 ObjectPool 脚本组件，以便后面的使用
+    [SerializeField] private ObjectPool objectPoolClone;
 
     //控制攻速的bool类型标志锁，判断下一只箭能否射出？控制攻击速度为 每秒射出1只箭
     private bool nextArrow = true;
@@ -97,8 +99,8 @@ public class FrostArcher1Controller : MonoBehaviour
     //发出弓箭函数
     public void IceArrow()
     {
-        //实例化一支箭
-        GameObject iceArrow = GameObject.Instantiate(IceArrowClone,transform) as GameObject;
+        //通过对象池，获得弓箭对象
+        GameObject iceArrow = objectPoolClone.Create(IceArrowClone);
         
         //设置弓箭起始坐标
         iceArrow.transform.position = FrostArcher1Clone.transform.position + new Vector3(0,0.3f,0);
@@ -113,13 +115,11 @@ public class FrostArcher1Controller : MonoBehaviour
             .DOMove(FrostArcher2Clone.transform.position + new Vector3(-0.2f,0.3f,0), 0.4f)
             .OnComplete(() =>
             {
-                //销毁弓箭
-                Destroy(iceArrow);
-                
-                //实例化一个FrostArcherManager.cs脚本组件，以便使用里面的方法
-                FrostArcherManager frostArcherManager = FrostArcherManager.Instantiate(frostArcherManagerClone, transform);
+                //通过对象池，弃用隐藏游戏对象
+                objectPoolClone.Delete(iceArrow);
+
                 //获得cav里的弓箭手数据，以便获得攻击力数据进行后续扣血
-                List<FrostArcherModel> list = frostArcherManager.GetFrostArcherModel();
+                List<FrostArcherModel> list = frostArcherManagerClone.GetFrostArcherModel();
                 
                 //血量 >0 时
                 if (int.Parse(textMeshClone.text) > 0)
