@@ -42,36 +42,37 @@ public class FrostArcher1Controller : MonoBehaviour
             {
                 //下一只箭还不能射出
                 nextArrow = false;
-                //设置进攻动画布尔参数为true，别的为false
-                animator.SetBool("victory",false);
-                animator.SetBool("idel",false);
-                animator.SetBool("run",false);
-                animator.SetBool("attack",true);
+                //触发进攻动画
+                animator.SetTrigger("attack");
                 //延迟执行弓箭飞出的动画，来衔接匹配人物的射箭动画
-                Invoke("IceArrow", 0.5f);
+                Invoke("IceArrow", 0.6f);
             }
         }
 
         //键盘按下R，展示奔跑动画
         if (Input.GetKeyDown(KeyCode.R))
         {
-            //设置跑步动画布尔参数为true，别的为false
-            animator.SetBool("victory",false);
-            animator.SetBool("idel",false);
-            animator.SetBool("attack",false);
-            animator.SetBool("run",true);
+            //触发跑步动画
+            animator.SetTrigger("run");
             //移动
-            transform.Translate(Vector3.forward * 5 * Time.deltaTime);
+            transform.Translate(Vector3.forward * 2 * Time.deltaTime);
+        }
+        else
+        {
+            //重置触发器，否则连续多次触发run触发器时会导致触发器叠加，出现bug
+            animator.ResetTrigger("run");
         }
 
         //键盘按下I，展示待机动画
         if (Input.GetKeyDown(KeyCode.I))
         {
-            //设置待机动画布尔参数为true，别的为false
-            animator.SetBool("victory",false);
-            animator.SetBool("run",false);
-            animator.SetBool("attack",false);
-            animator.SetBool("idel",true);
+            //触发待机动画
+            animator.SetTrigger("idel");
+        }
+        else
+        {
+            //重置触发器，否则连续多次触发idel触发器时会导致触发器叠加，出现bug
+            animator.ResetTrigger("idel");
         }
         
         //垂直轴 1 0 -1
@@ -83,7 +84,7 @@ public class FrostArcher1Controller : MonoBehaviour
         
         if (dir != Vector3.zero)//按下了按键
         {
-            //只能用上下左右控制走动，防止按下A键时也发生旋转和移动
+            //只能用键盘的上下左右键控制走动，防止按下A键时也发生旋转和移动
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) ||
                 Input.GetKey(KeyCode.RightArrow))
             {
@@ -111,7 +112,7 @@ public class FrostArcher1Controller : MonoBehaviour
 
         //移动弓箭，完成后销毁
         iceArrow.transform
-            .DOMove(FrostArcher2Clone.transform.position + new Vector3(-0.2f,0.3f,0), 0.5f)
+            .DOMove(FrostArcher2Clone.transform.position + new Vector3(-0.2f,0.3f,0), 0.4f)
             .OnComplete(() =>
             {
                 //销毁弓箭
@@ -131,14 +132,12 @@ public class FrostArcher1Controller : MonoBehaviour
                 //血量 <= 0 时
                 if (int.Parse(textMeshClone.text) <= 0)
                 {
-                    //设置敌方士兵禁用，敌方士兵消失
+                    //设置敌方士兵禁用，敌方士兵消失、
                     FrostArcher2Clone.SetActive(false);
-                    //己方士兵播放获胜动画
-                    animator.SetBool("victory",true);
+                    //触发己方士兵播放获胜动画
+                    animator.SetTrigger("victory");
                 }
-
-                //设置攻击动画布尔参数为false，攻击动画结束。
-                animator.SetBool("attack",false);
+                
                 //设置下一只箭可以射出
                 nextArrow = true;
             });
