@@ -54,8 +54,6 @@ public class FrostArcher1Controller : MonoBehaviour
         {
             //触发跑步动画
             animator.SetTrigger("run");
-            //移动
-            transform.Translate(Vector3.forward * 2 * Time.deltaTime);
         }
         else
         {
